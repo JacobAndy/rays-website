@@ -12,7 +12,23 @@ class NavBar extends Component {
   render() {
     let { burgerToggle } = this.state;
     return (
-      <div className="navbar-holder">
+      <div
+        className={
+          burgerToggle
+            ? "navbar-holder navbar-holder-slide-mobile"
+            : "navbar-holder"
+        }
+        onClick={() => {
+          this.setState({ burgerToggle: !this.state.burgerToggle });
+        }}
+      >
+        <div className="burger-holder">
+          <div className={burgerToggle ? "topBun topBunActive" : "topBun"} />
+          <div className={burgerToggle ? null : "middleBun"} />
+          <div
+            className={burgerToggle ? "bottomBun bottomBunActive" : "bottomBun"}
+          />
+        </div>
         <section
           className={
             burgerToggle
@@ -20,9 +36,9 @@ class NavBar extends Component {
               : "navbar-info"
           }
         >
-          <Link to="/courses">
+          {/* <Link to="/courses">
             <p>Courses</p>
-          </Link>
+          </Link> */}
           <Link to="/blogs">
             <p>Blogs</p>
           </Link>
@@ -32,9 +48,9 @@ class NavBar extends Component {
           <Link to="/">
             <h4>Ray McCollum</h4>
           </Link>
-          <Link to="/messages">
+          {/* <Link to="/messages">
             <p>Messages</p>
-          </Link>
+          </Link> */}
           <Link to="/donate">
             <p>Donate</p>
           </Link>

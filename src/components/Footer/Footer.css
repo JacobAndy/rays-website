@@ -1,10 +1,11 @@
 .footer-main {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .footer-main > h4 {
   font-weight: 200;
