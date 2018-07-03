@@ -1,0 +1,25 @@
+.donation-progress {
+  width: 60vw;
+  height: 15vh;
+  background: lightgray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin: auto; }
+  .donation-progress div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+  .donation-progress__donation-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: blue; }
+
+/*# sourceMappingURL=output.css.map */
