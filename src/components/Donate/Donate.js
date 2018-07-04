@@ -8,28 +8,35 @@ import { Link } from "react-router-dom";
 
 class Donate extends Component {
   state = {
-    amount: "50",
-    query: ""
+    amount: "",
+    query: "",
+    active: "1"
   };
   componentDidMount() {
     const params = queryString.parse(this.props.location.search);
     this.setState({ query: params });
-    console.log(params);
+    console.log(this.state.query);
   }
+  handleAmount = amount => {
+    this.setState({ amount: amount.slice(1) });
+  };
+  toggleActive = num => {
+    this.setState({ active: num });
+  };
   render() {
     let { query, amount } = this.state;
     return (
       <section>
         <div className="donation-progress">
-          <DonationDot number="1" name="Amount" />
-          <DonationDot number="2" name="Details" />
-          <DonationDot number="3" name="Payment" />
+          <DonationDot active={this.state.active} number="1" name="Amount" />
+          <DonationDot active={this.state.active} number="2" name="Details" />
+          <DonationDot active={this.state.active} number="3" name="Payment" />
         </div>
         {query.amount ? (
           <p>test</p>
         ) : (
           <div>
-            <DonationAmount />
+            <DonationAmount update={this.handleAmount} />
             <DonationSubscription />
           </div>
         )}

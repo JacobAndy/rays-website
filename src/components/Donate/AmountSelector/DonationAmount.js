@@ -23,6 +23,7 @@ class DonationAmount extends Component {
     }
   };
   handleChange = (event, maskedvalue, floatvalue) => {
+    this.props.update(maskedvalue);
     this.setState({
       ten: false,
       twenty: false,
@@ -35,15 +36,18 @@ class DonationAmount extends Component {
   };
   render() {
     let { ten, twenty, fifty, hundred, twoFifty, fiveHundred } = this.state;
+    let { update } = this.props;
     return (
       <div className="donation-amount-holder">
         <EachDonation
+          update={update}
           changeCurr={this.changeCurrent}
           active={ten}
           wordAmount="ten"
           amount="$10"
         />
         <EachDonation
+          update={update}
           changeCurr={this.changeCurrent}
           changeCurr={this.changeCurrent}
           active={twenty}
@@ -51,24 +55,28 @@ class DonationAmount extends Component {
           amount="$20"
         />
         <EachDonation
+          update={update}
           changeCurr={this.changeCurrent}
           active={fifty}
           wordAmount="fifty"
           amount="$50"
         />
         <EachDonation
+          update={update}
           changeCurr={this.changeCurrent}
           active={hundred}
           wordAmount="hundred"
           amount="$100"
         />
         <EachDonation
+          update={update}
           changeCurr={this.changeCurrent}
           active={twoFifty}
           wordAmount="twoFifty"
           amount="$250"
         />
         <EachDonation
+          update={update}
           changeCurr={this.changeCurrent}
           active={fiveHundred}
           wordAmount="fiveHundred"

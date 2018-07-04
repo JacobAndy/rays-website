@@ -3,16 +3,20 @@ import "../../../Sass/output.css";
 
 class EachDonation extends Component {
   render() {
+    let { update, changeCurr, amount } = this.props;
     return (
       <div
-        onClick={() => this.props.changeCurr(this.props.wordAmount)}
+        onClick={() => {
+          changeCurr(this.props.wordAmount);
+          update(amount);
+        }}
         className={
           this.props.active
             ? "ea-donation"
             : "ea-donation ea-donation__opaChange"
         }
       >
-        <p>{this.props.amount}</p>
+        <p>{amount}</p>
       </div>
     );
   }
