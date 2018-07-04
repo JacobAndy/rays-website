@@ -2,11 +2,10 @@
 @import "__variables";
 
 .donation-progress {
-  width: 60vw;
-  height: 15vh;
+  width: $donationBoxWidth;
+  height: 10vh;
   background: lightgray;
   @include flex(space-around, center, row);
-  margin: auto;
   div {
     @include flex(center, center, column);
   }
@@ -17,4 +16,32 @@
     border-radius: 50%;
     background: blue;
   }
+}
+.donation-amount-holder {
+  width: $donationBoxWidth;
+  @include flex(space-between, center, row);
+  flex-wrap: wrap;
+  &__user-input {
+    width: 320px;
+    height: $donationBoxHeight;
+    background: whitesmoke;
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+}
+.ea-donation {
+  font-size: 30px;
+  @include flex(center, center, column);
+  width: 160px;
+  height: $donationBoxHeight;
+  background: green;
+  margin-bottom: 10px;
+  &__opaChange {
+    opacity: 0.7;
+  }
+}
+.sub-box {
+  width: $donationBoxWidth;
+  height: $donationBoxHeight;
+  background: green;
 }

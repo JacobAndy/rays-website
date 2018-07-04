@@ -1,46 +1,42 @@
 import React, { Component } from "react";
 import "../../Sass/output.css";
 import DonationDot from "./DonationDot";
-import DonationAmount from "./DonationAmount";
+import DonationAmount from "./AmountSelector/DonationAmount";
+import queryString from "query-string";
+import DonationSubscription from "./DonationSubscription";
+import { Link } from "react-router-dom";
 
 class Donate extends Component {
-  state = {};
+  state = {
+    amount: "50",
+    query: ""
+  };
+  componentDidMount() {
+    const params = queryString.parse(this.props.location.search);
+    this.setState({ query: params });
+    console.log(params);
+  }
   render() {
+    let { query, amount } = this.state;
     return (
-      <main>
+      <section>
         <div className="donation-progress">
-          <div>
-            <h4>Amount</h4>
-            <DonationDot number="1" />
-          </div>
-          <div>
-            <h4>Details</h4>
-            <DonationDot number="2" />
-          </div>
-          <div>
-            <h4>Payment</h4>
-            <DonationDot number="3" />
-          </div>
-          {/* <div className="donation-progress__donation-dots">
-            <div>
-              <h4>Amount</h4>
-            </div>
-            <p>1</p>
-          </div>
-          <div className="donation-progress__donation-dots">
-            <div>
-              <h4>Details</h4>
-            </div>
-            <p>2</p>
-          </div>
-          <div className="donation-progress__donation-dots">
-            <div>
-              <h4>Payment</h4>
-            </div>
-            <p>3</p>
-          </div> */}
+          <DonationDot number="1" name="Amount" />
+          <DonationDot number="2" name="Details" />
+          <DonationDot number="3" name="Payment" />
         </div>
-      </main>
+        {query.amount ? (
+          <p>test</p>
+        ) : (
+          <div>
+            <DonationAmount />
+            <DonationSubscription />
+          </div>
+        )}
+        <Link to={`/donate/?amount=${amount}`}>
+          <div>NEXT</div>
+        </Link>
+      </section>
     );
   }
 }

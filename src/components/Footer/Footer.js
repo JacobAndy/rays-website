@@ -5,8 +5,8 @@ function Footer() {
   return (
     <main className="footer-main">
       <h4>
-        © Ray McCollum Celebration Church of Nashville Designed by Jacob
-        Anderson
+        © Ray McCollum Celebration Church of Nashville Designed and Developed by
+        Jacob Anderson
       </h4>
     </main>
   );

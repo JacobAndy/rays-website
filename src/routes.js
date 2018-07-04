@@ -7,7 +7,7 @@ import Contact from "./components/Contact/Contact";
 export default (
   <Switch>
     <Route exact path="/" component={Home} />
-    <Route path="/donate" component={Donate} />
-    <Route path="/contact" component={Contact} />
+    <Route exact path="/donate" component={Donate} />
+    <Route exact path="/contact" component={Contact} />
   </Switch>
 );
