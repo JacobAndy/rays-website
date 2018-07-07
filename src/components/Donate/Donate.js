@@ -6,6 +6,8 @@ import queryString from "query-string";
 import DonationSubscription from "./DonationSubscription";
 import { Link } from "react-router-dom";
 
+//Stripe NPM
+
 class Donate extends Component {
   state = {
     amount: "",
