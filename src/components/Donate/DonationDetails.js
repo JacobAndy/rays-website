@@ -17,8 +17,6 @@ class DonationDetails extends Component {
   };
   componentDidMount() {
     const params = queryString.parse(this.props.location.search);
-    // this.setState({ query: params });
-    // console.log(this.state.query);
     this.setState({ donationAmm: params.amount });
     console.log(params);
   }

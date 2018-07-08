@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../../Sass/output.css";
 import DonationAmount from "./AmountSelector/DonationAmount";
-import queryString from "query-string";
+
 import DonationSubscription from "./DonationSubscription";
 import { Link } from "react-router-dom";
 import DonationProgress from "./DonationProgress";
@@ -14,11 +14,7 @@ class Donate extends Component {
     query: "",
     active: "1"
   };
-  // componentDidMount() {
-  //   const params = queryString.parse(this.props.location.search);
-  //   this.setState({ query: params });
-  //   console.log(this.state.query);
-  // }
+
   handleAmount = amount => {
     this.setState({ amount: amount.slice(1) });
   };
