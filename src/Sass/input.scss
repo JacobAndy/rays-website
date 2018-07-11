@@ -37,7 +37,7 @@
   @include flex(center, center, column);
   width: 160px;
   height: $donationBoxHeight;
-  background: green;
+  background: $primary;
   margin-bottom: 10px;
   &__opaChange {
     opacity: 0.7;

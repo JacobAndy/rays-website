@@ -6,8 +6,8 @@ function DonationProgress() {
     <div className="donation-progress">
       <DonationDot
         active={
-          window.location.href === "http://localhost:3000/donate" ||
-          window.location.href === "http://localhost:3000/donate/"
+          window.location.href === `${process.env.DEVELOPMENT}/donate` ||
+          window.location.href === `${process.env.DEVELOPMENT}/donate/`
             ? true
             : false
         }

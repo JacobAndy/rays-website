@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import routes from "./routes";
@@ -7,11 +8,13 @@ import NavBar from "./components/NavBar/NavBar";
 class App extends Component {
   render() {
     return (
-      <div>
-        <NavBar />
-        {routes}
-        <Footer />
-      </div>
+      <Router>
+        <Fragment>
+          <NavBar />
+          {routes}
+          <Footer />
+        </Fragment>
+      </Router>
     );
   }
 }
