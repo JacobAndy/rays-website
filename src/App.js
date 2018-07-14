@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar/NavBar";
 
 class App extends Component {
   render() {
+    console.log("i hope this works");
     return (
       <Router>
         <Fragment>
